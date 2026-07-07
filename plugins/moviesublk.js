@@ -11,7 +11,7 @@ const { getContentType } = require("@whiskeysockets/baileys");
 
 const API_BASE = "https://subzslk.vercel.app/";
 const CHANNEL  = "https://whatsapp.com/channel/0029Vb8VPsxBKfi2WHCVgV0J";
-const BANNER   = "https://files.catbox.moe/04jdju.jpg";
+const BANNER   = "https://files.catbox.moe/kmfr8j.jpg";
 const TIMEOUT  = 5 * 60 * 1000;
 const sleep    = ms => new Promise(r => setTimeout(r, ms));
 
