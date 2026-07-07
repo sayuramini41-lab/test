@@ -15,7 +15,7 @@ const { getSettings } = require("../lib/settings");
 const { getContentType } = require("@whiskeysockets/baileys");
 
 const CINESUBZ_KEY = "key_faa62e4037a95cda";
-const SEARCH_POSTER = "https://files.catbox.moe/04jdju.jpg";
+const SEARCH_POSTER = "https://raw.githubusercontent.com/gojo1777/SAYURA-LK-BOT-help/refs/heads/main/file_00000000f2d47208a24ba4f8ead1263d.png";
 const CHANNEL_LINK = "https://whatsapp.com/channel/0029VbCvEPYF6smqypvOM042";
 const LISTENER_TIMEOUT = 5 * 60 * 1000; // 5 min
 
@@ -162,7 +162,7 @@ cmd(
             if (!query) return reply("🎬 *CINESUBZ MOVIE SEARCH*\n\nExample: `.cinesubz Avatar`");
 
             const settings = getSettings(sessionId);
-            const botName = settings.botName || config.PACKNAME || "KAVI-X-MINI";
+            const botName = settings.botName || config.PACKNAME || "SAYURA-LK-X-MINI";
 
             await conn.sendMessage(from, { react: { text: "🔎", key: mek.key } });
 
