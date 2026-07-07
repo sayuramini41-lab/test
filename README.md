@@ -1,6 +1,6 @@
 # B1
 ```
-name: Sayura MD Bot Runner
+name: KAVI X MD Bot Runner
 
 on:
   push:
