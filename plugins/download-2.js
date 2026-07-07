@@ -8,7 +8,7 @@ const { exec } = require('child_process');
 const util = require('util');
 const execPromise = util.promisify(exec);
 
-const fixed_thumb_url = "https://files.catbox.moe/04jdju.jpg";
+const fixed_thumb_url = "https://files.catbox.moe/kmfr8j.jpg";
 const cinesubz_footer = "✫☘ KAVI X MD 𝐌𝐎𝐕𝐈𝐄 𝐇𝐎𝐌𝐄☢️☘";
 
 const TWO_GB = 2 * 1024 * 1024 * 1024;
