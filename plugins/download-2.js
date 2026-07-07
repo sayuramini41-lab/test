@@ -267,7 +267,3 @@ async (conn, mek, m, { from, q, reply }) => {
         reply(`❌ Error: ${e.message}`);
     }
 });
-ERROR:", e);
-        reply(`❌ Error: ${e.message}`);
-    }
-});
