@@ -50,5 +50,3 @@ ${botName} OFFICIAL
         console.log(e);
     }
 });
-   }
-});
