@@ -13,7 +13,11 @@ async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender
 try{
 
 const botName = getBotName(sessionId, "KAVI X MD")
-const botLogo = getBotLogo(sessionId, config.ALIVE_IMG)
+// config.ALIVE_IMG comes from an env var - if it's not set on the host, it's
+// undefined, and passing {image:{url: undefined}} to Baileys crashes with
+// "Cannot read properties of undefined (reading 'toString')". Always fall
+// back to a real image URL.
+const botLogo = getBotLogo(sessionId, config.ALIVE_IMG || "https://files.catbox.moe/04jdju.jpg")
 
 let des = `👋 𝙷𝚎𝚕𝚕𝚘 ${pushname} 𝙸'𝚖 𝚊𝚕𝚒𝚟𝚎 𝚗𝚘𝚠
 
@@ -31,9 +35,14 @@ let des = `👋 𝙷𝚎𝚕𝚕𝚘 ${pushname} 𝙸'𝚖 𝚊𝚕𝚒𝚟𝚎 
 *°᭄${botName}*
 
 > © 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 ${botName}`
-return await conn.sendMessage(from,{image: {url: botLogo},caption: des},{quoted: mek})
+try {
+    return await conn.sendMessage(from,{image: {url: botLogo},caption: des},{quoted: mek})
+} catch (imgErr) {
+    console.log("[alive] image send failed, falling back to text:", imgErr)
+    return await conn.sendMessage(from,{text: des},{quoted: mek})
+}
 }catch(e){
 console.log(e)
-reply(`${e}`)
+reply(`❌ Error: ${e.message || e}`)
 }
 })
